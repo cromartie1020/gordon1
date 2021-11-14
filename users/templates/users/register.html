@@ -1,0 +1,21 @@
+{% extends 'vendors/base.html' %}
+{% load static %}
+{% block title %}
+   User Creation
+
+
+{% endblock%}
+
+
+{% block content %}
+    <div class="outline">
+    <form action="" method='POST' >
+        <div class='mt-5 outline'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class='btn btn-info' type="submit" value='Create User'>
+        </div>
+    </form>
+    </div>
+  
+{% endblock %}

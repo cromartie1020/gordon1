@@ -1,0 +1,15 @@
+{% extends 'vendors/base.html' %}
+{% load static %}
+{% block title %}
+   Vendors List 
+
+{% endblock%}
+{% block content %}
+{% for obj in object_list %}
+   <a href="{% url 'detail_view' obj.pk %}">
+    {{ obj.co_name }}
+   </a>
+  
+  <br>
+{% endfor %} 
+{% endblock %}

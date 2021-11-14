@@ -1,0 +1,21 @@
+{% extends 'vendors/base.html' %}
+{% load static %}
+{% block title %}
+   Login
+
+
+{% endblock%}
+
+
+{% block content %}
+    <div class="content-section">
+    <form action="" method='POST' >
+        <div class='mt-5 outline'>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class='btn btn-info' type="submit" value='Login'>
+        </div>
+    </form>
+    </div>
+  
+{% endblock %}

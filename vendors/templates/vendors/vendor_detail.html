@@ -1,0 +1,51 @@
+{% extends 'vendors/base.html' %}
+{% load static %}
+{% block title %}
+   Details
+{% endblock%}
+
+{% block content %}
+<div class="xy100">
+  {{ object.co_name }}
+  <br>
+
+  {% if object.st_addr %}
+    {{ object.st_addr }}
+    <br>
+  {% endif %}
+  {% if object.st_addr1  %}
+    {{ object.st_addr1 }}
+    <br>
+  {% endif %}
+  {% if object.st_addr2  %}
+    {{ object.st_addr2 }}
+    <br>
+  {% endif %}
+  
+  {% if object.st_addr3  %}
+   {{ object.st_addr3 }}
+  {% endif %}
+  
+  {% if object.city %}
+    {{ object.city }}, &nbsp;
+  {% endif %}
+  
+  {% if object.st %}
+    {{ object.st }} &nbsp; &nbsp; 
+  {% endif %}
+  
+  {% if object.zip_code%}
+    {{ object.zip_code }}   
+  {% endif %}
+  <br>
+
+  <div class='mt-3 noprint'>
+    <a href="{% url 'update_view' object.pk %}">
+      <button type='submit' class='btn btn-info'>Update</button>
+    </a>
+    <a href="{% url 'delete_view' object.pk %}">
+      <button type='submit' class='btn btn-danger'>Delete</button>
+    </a>
+  </div>
+</div>  
+{% endblock %}
