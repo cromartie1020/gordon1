@@ -9,6 +9,15 @@ from django.views.generic import (
 )
 
 
+def search_vendors(request):
+    if request.method == "POST":
+        searched = request.POST['searched']
+        print(searched)
+        vendors = Vendor.objects.filter(co_name__contains=searched)
+
+    return render(request, 'vendors/search_vendors.html', {'vendors': vendors, 'searched': searched})
+
+
 def select(request):
     object_list = Vendor.objects.all()
     return render(request, 'vendors/select.html', {'object_list': object_list})

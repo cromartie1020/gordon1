@@ -8,7 +8,7 @@ urlpatterns = [
     path('create/', views.Create_View.as_view(), name='create_view'),
     path('update/<int:pk>/', views.Update_View.as_view(), name='update_view'),
     path('delete/<int:pk>/', views.Delete_View.as_view(), name='delete_view'),
-
+    path('search_vendors/', views.search_vendors, name='search_vendors'),
 
 
 ]
